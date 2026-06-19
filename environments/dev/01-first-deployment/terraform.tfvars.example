@@ -1,0 +1,11 @@
+subscription_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+
+environment    = "dev"
+location       = "francecentral"
+location_short = "frc"
+
+workload       = "terraform-lab"
+workload_short = "tflab"
+
+owner       = "monlabazure"
+cost_center = "lab"
