@@ -1,0 +1,11 @@
+# Exemple de fichier CODEOWNERS
+# Ce fichier sera renommé en CODEOWNERS plus tard dans la série.
+
+# Tous les fichiers Terraform
+*.tf @<github-username>
+
+# Documentation
+docs/ @<github-username>
+
+# Workflows GitHub Actions
+.github/workflows/ @<github-username>
