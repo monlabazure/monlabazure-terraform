@@ -16,6 +16,10 @@ crash.*.log
 # Keep examples
 !*.tfvars.example
 
+# Backend configuration files
+*.hcl
+!*.hcl.example
+
 # Terraform override files
 override.tf
 override.tf.json
@@ -28,6 +32,10 @@ terraform.rc
 
 # Lock file: keep it versioned
 !.terraform.lock.hcl
+
+# Terraform plan files
+tfplan
+*.tfplan
 
 # OS files
 .DS_Store

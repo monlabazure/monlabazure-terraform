@@ -10,15 +10,53 @@ Construire progressivement une mini Landing Zone Azure sécurisée avec Terrafor
 
 ```text
 monlabazure-terraform/
-├── environments/
-│   ├── dev/
-│   ├── test/
-│   └── prod/
-├── modules/
-├── scripts/
-├── docs/
 ├── README.md
-└── .gitignore
+├── .gitignore
+├── docs/
+├── scripts/
+├── environments/
+├── modules/
+├── examples/
+└── .github/
+```
+
+## Dossiers principaux
+
+| Dossier | Rôle |
+|---|---|
+| `docs/` | Documentation interne du dépôt |
+| `scripts/` | Scripts d’aide PowerShell |
+| `environments/` | Configurations par environnement |
+| `modules/` | Modules Terraform réutilisables |
+| `examples/` | Exemples d’utilisation des modules |
+| `.github/` | Workflows GitHub Actions et configuration GitHub |
+
+## Environnements
+
+```text
+environments/
+├── dev/
+├── test/
+└── prod/
+```
+
+## Stratégie d’environnements
+
+- `dev` : développement et tests rapides
+- `test` : validation intermédiaire
+- `prod` : production de lab
+
+## GitHub
+
+Le dépôt est versionné avec Git et synchronisé avec GitHub.
+
+Commandes utiles :
+
+```powershell
+git status
+git add .
+git commit -m "Message du commit"
+git push
 ```
 
 ## Prérequis
@@ -28,6 +66,7 @@ monlabazure-terraform/
 - Azure CLI
 - Terraform CLI
 - Git
+- GitHub CLI
 - Visual Studio Code
 - Une subscription Azure de lab
 
@@ -40,19 +79,27 @@ monlabazure-terraform/
 ## Vérifier le contexte Azure
 
 ```powershell
-az account show --output table
+.\scripts\check-azure-context.ps1
 ```
 
-## Vérifier Terraform
+## Commandes Terraform utiles
 
 ```powershell
-terraform version
+terraform init
+terraform fmt
+terraform validate
+terraform plan
+terraform apply
+terraform destroy
 ```
 
 ## Bonnes pratiques
 
 - Ne pas versionner les fichiers `*.tfvars`
 - Ne pas versionner les fichiers `*.tfstate`
+- Ne pas versionner les vrais fichiers `backend.hcl`
+- Versionner les fichiers `*.example`
 - Versionner `.terraform.lock.hcl`
 - Toujours vérifier la subscription active avant un déploiement
-- Toujours exécuter `terraform fmt` et `terraform validate`
+- Toujours lire le plan Terraform avant un apply
+- Pousser le code validé vers GitHub
