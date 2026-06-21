@@ -81,6 +81,39 @@ git push
 ```powershell
 .\scripts\check-azure-context.ps1
 ```
+## Backend Terraform
+
+Le state Terraform est stocké dans Azure Storage à partir du TP 3.
+
+Le backend est créé avec Terraform via :
+
+```text
+bootstrap/backend
+```
+
+Structure logique :
+
+```text
+tfstate/
+├── bootstrap/backend.terraform.tfstate
+├── dev/01-first-deployment.terraform.tfstate
+├── test/platform.terraform.tfstate
+└── prod/platform.terraform.tfstate
+```
+
+Les vrais fichiers `backend.hcl` ne sont pas versionnés.
+
+Seuls les fichiers suivants sont versionnés :
+
+```text
+backend.hcl.example
+```
+
+Pour initialiser Terraform avec le backend distant :
+
+```powershell
+terraform init -backend-config="..\backend.hcl"
+```
 
 ## Commandes Terraform utiles
 

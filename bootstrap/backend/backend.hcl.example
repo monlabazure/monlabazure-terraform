@@ -1,7 +1,7 @@
 resource_group_name  = "rg-tfstate-shared-frc-001"
 storage_account_name = "sttfstatefrcq9zhrp"
 container_name       = "tfstate"
-key                  = "prod/platform.terraform.tfstate"
+key                  = "bootstrap/backend.terraform.tfstate"
 
 use_cli              = true
 use_azuread_auth     = true

@@ -1,0 +1,11 @@
+subscription_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+
+location       = "francecentral"
+location_short = "frc"
+
+environment = "shared"
+workload    = "terraform-state"
+owner       = "monlabazure"
+
+container_name   = "tfstate"
+soft_delete_days = 14
