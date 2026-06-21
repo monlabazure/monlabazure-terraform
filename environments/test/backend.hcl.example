@@ -1,0 +1,9 @@
+resource_group_name  = "rg-tfstate-shared-frc-001"
+storage_account_name = "sttfstatefrcq9zhrp"
+container_name       = "tfstate"
+key                  = "test/platform.terraform.tfstate"
+
+use_cli              = true
+use_azuread_auth     = true
+tenant_id            = "4608cc71-0bd0-41f2-9f19-8ca9e4e21b16"
+subscription_id      = "925cda9d-d01b-4db7-a5f7-1d9e44cf8f73"
